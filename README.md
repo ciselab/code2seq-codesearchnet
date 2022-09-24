@@ -2,21 +2,22 @@
 
 This is the repository to run the experiment of code2seq on CodeSearchNet dataset for the task of Documentation Generation.
 
-Before running this, please make sure that code2seq's master branch is up to date with our recent changes **(it currently isn't)**
-
 ## Running the experiment
 
-To run the experiment, please first run ```prepare.sh``` or ```prepare_minimal.sh```. This will download and prepare the full and minimal datasets, respectively.
-
-Then build the Docker image situated in code2seq directory:
-
+- First clone the repository recursively:
 ```
-cd code2seq
-docker build -t ciselab/code2seq:latest . 
+git clone git@github.com:ciselab/code2seq-codesearchnet.git --recursive
 ```
 
-Lastly, run the experiment with docker-compose:
-
+- Make sure you have ```nvidia-container-toolkit``` installed, this will allow your Docker containers to access your Nvidia card:
 ```
-docker-compose up
+pamac install nvidia-container-toolkit
+```
+(switch pamac for a package manager that your distribution uses).
+
+- To run the experiment, please first run ```prepare.sh``` or ```prepare_minimal.sh```. This will download and prepare the full and minimal datasets, respectively.
+
+- Then run the experiment with docker-compose:
+```
+docker-compose up --build
 ```
