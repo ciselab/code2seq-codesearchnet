@@ -21,3 +21,5 @@ pamac install nvidia-container-toolkit
 ```
 docker-compose up --build
 ```
+
+**Warning!** If you hit the rate limits on Nvidia Docker image downloads, you might start getting an ```401 Unauthorized``` error when trying to download the Docker image. If that happens, please follow [this guide](https://stackoverflow.com/a/70970425/13988119) to register and login through your Nvidia account.
