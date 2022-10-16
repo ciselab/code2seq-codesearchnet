@@ -18,7 +18,7 @@ pamac install nvidia-container-toolkit
 - To run the experiment, please first run (as root) ```prepare.sh``` or ```prepare_minimal.sh```. This will download and prepare the full and minimal datasets, respectively:
 
 ```
-sudo bash prepare..sh
+sudo bash prepare.sh
 ```
 ```
 sudo bash prepare_minimal.sh
